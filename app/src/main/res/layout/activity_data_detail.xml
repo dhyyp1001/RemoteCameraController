@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020202"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:context="com.example.remotecameracontroller.MainActivity"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="477dp"
+        >
+
+        <org.videolan.libvlc.util.VLCVideoLayout
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:fitsSystemWindows="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp"
+            >
+
+        </org.videolan.libvlc.util.VLCVideoLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="308dp"
+        >
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="409dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+<!--
+        <ImageButton
+            android:id="@+id/arrow_left"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/arrow_up"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+        <ImageButton
+            android:id="@+id/arrow_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:rotationY="180"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+        <ImageButton
+            android:id="@+id/arrow_up"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="48dp"
+            android:rotation="90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/arrow_right"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+        <ImageButton
+            android:id="@+id/arrow_down"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="20dp"
+            android:rotation="-90"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/arrow_right"
+            app:srcCompat="?attr/homeAsUpIndicator"
+            tools:ignore="SpeakableTextPresentCheck"
+            />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
