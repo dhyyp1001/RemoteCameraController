@@ -65,6 +65,7 @@ public class DataDetailActivity extends Activity {
         Intent intent = getIntent();
         uri1 = Uri.parse(intent.getStringExtra("url"));
         uri2 = Uri.parse(intent.getStringExtra("modUrl"));
+        System.out.println("------------------------------------------------"+uri2);
 
         //퍼미션 체크하기
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -102,8 +103,8 @@ public class DataDetailActivity extends Activity {
         mMediaPlayer.play();// 재생 시작
         webView.loadUrl(new UrlList().controllerWebPageUrl());//웹페이지 호출
 
-        new OnvifPTZControllerConnection(uri1.toString());//webview 조작 연결/ post로 선택된 ip 카메라의 rtsp보내기
         new ModbusInfoConnection(uri2.toString());
+        new OnvifPTZControllerConnection(uri1.toString());//webview 조작 연결/ post로 선택된 ip 카메라의 rtsp보내기
         try {
             timer = new Timer();
             timer.schedule(new TimerTask() {
@@ -111,7 +112,7 @@ public class DataDetailActivity extends Activity {
                 public void run() {
                     new ModbusGetInfo();
                 }
-            }, 0, 7000);
+            }, 0, 5000);
         } catch (Exception e) {
             e.printStackTrace();
         }
