@@ -7,8 +7,13 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import network_resurce.PostLoginData;
 
 public class MainActivity extends AppCompatActivity {
     List<MainListData> data;
@@ -24,10 +29,8 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_view);
         data = new ArrayList<>();
 
-        //-- db 연결시 해당내용 변경
-        data.add(new MainListData("자동기 사무실 내부", "rtsp://admin:wkehdrl6320@61.37.102.154:554/profile2/media.smp", "61.37.102.154"));
-        data.add(new MainListData("외부 시설 도로", "rtsp://admin:Tldosdptmdk2@223.171.40.250:554/profile2/media.smp", "61.37.102.154"));
-        //--
+        Gson gson = new Gson();
+        data = gson.fromJson(PostLoginData.listValues, new TypeToken<ArrayList<MainListData>>(){}.getType());
 
         adapter = new MainListAdapter(this, data);
         listView.setAdapter(adapter);
@@ -39,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 //클릭시 이벤트
                 MainListData selectedData = (MainListData) adapter.getItem(position);
                 Intent intent = new Intent(MainActivity.this, DataDetailActivity.class);
-                intent.putExtra("url", selectedData.getUrl());
-                intent.putExtra("modUrl", selectedData.getModUrl());
+                intent.putExtra("mediaUri", selectedData.getMediaUri());
+                intent.putExtra("modIP", selectedData.getModIP());
 
                 startActivity(intent);
             }

@@ -22,7 +22,7 @@
         <!--android:background="@drawable/layout_background"-->
 
     <EditText
-        android:id="@+id/login_email"
+        android:id="@+id/login_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -30,15 +30,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="308dp"
+        android:layout_height="251dp"
         >
 
         <WebView
             android:id="@+id/webview"
             android:layout_width="409dp"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="1dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +45,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
-<!--
+        <!--
         <ImageButton
             android:id="@+id/arrow_left"
             android:layout_width="50dp"

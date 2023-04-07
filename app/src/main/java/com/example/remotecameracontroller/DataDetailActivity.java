@@ -63,8 +63,8 @@ public class DataDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_detail);
         Intent intent = getIntent();
-        uri1 = Uri.parse(intent.getStringExtra("url"));
-        uri2 = Uri.parse(intent.getStringExtra("modUrl"));
+        uri1 = Uri.parse(intent.getStringExtra("mediaUri"));
+        uri2 = Uri.parse(intent.getStringExtra("modIP"));
         System.out.println("------------------------------------------------"+uri2);
 
         //퍼미션 체크하기

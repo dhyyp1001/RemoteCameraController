@@ -52,8 +52,8 @@ public class MainListAdapter extends BaseAdapter {
         MainListData data = (MainListData) getItem(position);
 
         //view 에 data 삽입
-        location.setText(data.getLocation());
-        url.setText("url : "+data.getUrl());
+        location.setText(data.getsName());
+        //url.setText("url : "+data.getRtspUrl());
 
         return convertView;
     }
